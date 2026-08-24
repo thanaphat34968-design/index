@@ -1,0 +1,3941 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="เว็บไซต์เรียนรู้ Calculus 1 ตั้งแต่พื้นฐาน Functions Limits Derivatives และ Integrals">
+
+<title>Calculus 1 Academy</title>
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    "Segoe UI",
+    Tahoma,
+    Arial,
+    sans-serif;
+
+    background:#f5f7fb;
+
+    color:#1e293b;
+
+    line-height:1.8;
+
+    transition:
+    background .3s,
+    color .3s;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --primary:#2563eb;
+
+    --primary-dark:#1d4ed8;
+
+    --secondary:#38bdf8;
+
+    --dark:#0f172a;
+
+    --dark2:#1e293b;
+
+    --light:#f8fafc;
+
+    --gray:#64748b;
+
+    --border:#e2e8f0;
+
+    --success:#16a34a;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5000;
+
+    background:
+    rgba(15,23,42,.96);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 4px 20px rgba(0,0,0,.15);
+}
+
+
+.navbar{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    min-height:70px;
+
+    padding:10px 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+
+.logo{
+
+    color:white;
+
+    font-size:25px;
+
+    font-weight:800;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+
+.nav-menu{
+
+    display:flex;
+
+    gap:25px;
+
+    list-style:none;
+
+    align-items:center;
+}
+
+
+.nav-menu a{
+
+    color:#e2e8f0;
+
+    font-size:15px;
+
+    transition:.25s;
+}
+
+
+.nav-menu a:hover{
+
+    color:var(--secondary);
+
+}
+
+
+.theme-btn{
+
+    border:none;
+
+    background:#1e293b;
+
+    color:white;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:680px;
+
+    display:flex;
+
+    align-items:center;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(56,189,248,.25),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #172554,
+        #1e3a8a
+    );
+}
+
+
+.hero-container{
+
+    max-width:1300px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:80px 25px;
+
+    display:grid;
+
+    grid-template-columns:
+    1.3fr .7fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+
+.hero h1{
+
+    font-size:
+    clamp(42px,6vw,72px);
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+}
+
+
+.hero h1 span{
+
+    color:var(--secondary);
+
+}
+
+
+.hero p{
+
+    font-size:19px;
+
+    color:#dbeafe;
+
+    max-width:750px;
+
+    margin-bottom:35px;
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:13px 23px;
+
+    border-radius:9px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    border:none;
+}
+
+
+.btn-primary{
+
+    background:var(--secondary);
+
+    color:#082f49;
+}
+
+
+.btn-primary:hover{
+
+    background:#7dd3fc;
+
+}
+
+
+.btn-outline{
+
+    border:
+    1px solid #93c5fd;
+
+    color:white;
+
+    background:transparent;
+}
+
+
+.hero-card{
+
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+    padding:35px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(15px);
+}
+
+
+.hero-card h3{
+
+    font-size:25px;
+
+    margin-bottom:15px;
+
+    color:#7dd3fc;
+}
+
+
+.hero-card ul{
+
+    list-style:none;
+}
+
+
+.hero-card li{
+
+    padding:8px 0;
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section{
+
+    padding:90px 20px;
+}
+
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:55px;
+}
+
+
+.section-title h2{
+
+    font-size:
+    clamp(30px,4vw,42px);
+
+    color:var(--dark);
+
+    margin-bottom:10px;
+}
+
+
+.section-title p{
+
+    color:var(--gray);
+
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats{
+
+    margin-top:-50px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+
+.stats-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 15px 40px rgba(15,23,42,.12);
+
+    overflow:hidden;
+}
+
+
+.stat{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-right:
+    1px solid var(--border);
+}
+
+
+.stat:last-child{
+
+    border-right:none;
+}
+
+
+.stat strong{
+
+    display:block;
+
+    font-size:35px;
+
+    color:var(--primary);
+}
+
+
+.stat span{
+
+    color:var(--gray);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about{
+
+    background:white;
+}
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+.info-card{
+
+    padding:30px;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    transition:.3s;
+}
+
+
+.info-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 12px 30px rgba(15,23,42,.1);
+}
+
+
+.info-icon{
+
+    font-size:38px;
+
+    margin-bottom:12px;
+}
+
+
+.info-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+}
+
+
+/* =========================================================
+   COURSE
+========================================================= */
+
+.course{
+
+    background:#eef2ff;
+}
+
+
+.course-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+}
+
+
+.lesson-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:16px;
+
+    border-left:
+    6px solid var(--primary);
+
+    box-shadow:
+    0 5px 20px rgba(15,23,42,.06);
+
+    transition:.3s;
+}
+
+
+.lesson-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+.lesson-number{
+
+    color:var(--primary);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+}
+
+
+.lesson-card h3{
+
+    font-size:24px;
+
+    margin:8px 0;
+}
+
+
+.lesson-card p{
+
+    color:var(--gray);
+}
+
+
+.lesson-card ul{
+
+    margin:
+    15px 0 0 20px;
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.video-section{
+
+    background:white;
+}
+
+
+.video-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+
+.video-card{
+
+    background:white;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 8px 30px rgba(15,23,42,.08);
+
+    transition:
+    transform .3s,
+    box-shadow .3s;
+}
+
+
+.video-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 18px 40px rgba(15,23,42,.15);
+}
+
+
+.video-thumbnail{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    background:#000;
+
+    cursor:pointer;
+
+    overflow:hidden;
+}
+
+
+.video-thumbnail img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+    transform .4s,
+    filter .4s;
+}
+
+
+.video-thumbnail:hover img{
+
+    transform:scale(1.06);
+
+    filter:brightness(55%);
+}
+
+
+.play-button{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:75px;
+
+    height:75px;
+
+    border-radius:50%;
+
+    background:#ff0000;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    padding-left:4px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.4);
+
+    transition:.3s;
+}
+
+
+.video-thumbnail:hover .play-button{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.15);
+}
+
+
+.video-info{
+
+    padding:25px;
+}
+
+
+.video-number{
+
+    display:inline-block;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    color:#2563eb;
+
+    background:#eff6ff;
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    margin-bottom:8px;
+}
+
+
+.video-info h3{
+
+    font-size:22px;
+
+    margin-bottom:8px;
+
+    color:#0f172a;
+}
+
+
+.video-info p{
+
+    color:#64748b;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+}
+
+
+.watch-button{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+
+.watch-button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   VIDEO MODAL
+========================================================= */
+
+.video-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    background:
+    rgba(0,0,0,.9);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+
+.video-box{
+
+    width:100%;
+
+    max-width:1100px;
+
+    background:#000;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    box-shadow:
+    0 20px 70px rgba(0,0,0,.6);
+}
+
+
+.video-player{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+}
+
+
+.video-player iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+}
+
+
+.close-video{
+
+    position:absolute;
+
+    right:12px;
+
+    top:12px;
+
+    z-index:10;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+    rgba(0,0,0,.8);
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+
+.close-video:hover{
+
+    background:#ef4444;
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.topics{
+
+    background:#172554;
+
+    color:white;
+}
+
+
+.topics .section-title h2{
+
+    color:white;
+}
+
+
+.topics .section-title p{
+
+    color:#bfdbfe;
+}
+
+
+.topic-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+
+.topic{
+
+    padding:25px;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.06);
+
+    border-radius:14px;
+}
+
+
+.topic h3{
+
+    color:#7dd3fc;
+
+    margin-bottom:8px;
+}
+
+
+/* =========================================================
+   FORMULAS
+========================================================= */
+
+.formulas{
+
+    background:#f8fafc;
+}
+
+
+.formula-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+}
+
+
+.formula-card{
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:28px;
+
+    border-radius:15px;
+}
+
+
+.formula-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:15px;
+}
+
+
+.formula{
+
+    background:#1e293b;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    margin:8px 0;
+
+    font-family:
+    "Courier New",
+    monospace;
+
+    font-size:18px;
+
+    overflow-x:auto;
+}
+
+
+/* =========================================================
+   EXAMPLES
+========================================================= */
+
+.examples{
+
+    background:white;
+}
+
+
+.example{
+
+    background:#f8fafc;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:15px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+}
+
+
+.question{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:var(--primary-dark);
+
+    margin-bottom:15px;
+}
+
+
+.answer{
+
+    background:#eff6ff;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin-top:15px;
+}
+
+
+/* =========================================================
+   STUDY PLAN
+========================================================= */
+
+.study-plan{
+
+    background:#eef2ff;
+}
+
+
+.timeline{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+
+.week{
+
+    background:white;
+
+    padding:22px 25px;
+
+    margin-bottom:15px;
+
+    border-radius:12px;
+
+    border-left:
+    5px solid #6366f1;
+}
+
+
+.week strong{
+
+    color:#4338ca;
+}
+
+
+/* =========================================================
+   CALCULATOR
+========================================================= */
+
+.calculator{
+
+    background:white;
+}
+
+
+.calculator-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:18px;
+}
+
+
+.input-group{
+
+    margin-bottom:20px;
+}
+
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+}
+
+
+.input-group input{
+
+    width:100%;
+
+    padding:13px;
+
+    border-radius:8px;
+
+    border:1px solid #334155;
+
+    background:#1e293b;
+
+    color:white;
+
+    font-size:16px;
+}
+
+
+.calc-button{
+
+    width:100%;
+
+    padding:13px;
+
+    background:#38bdf8;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+
+.calc-result{
+
+    margin-top:20px;
+
+    padding:20px;
+
+    background:#1e293b;
+
+    border-radius:8px;
+
+    color:#7dd3fc;
+
+    font-size:20px;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz{
+
+    background:#f8fafc;
+}
+
+
+.quiz-container{
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+
+.question-box{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:14px;
+
+    margin-bottom:20px;
+
+    border:
+    1px solid var(--border);
+}
+
+
+.question-box h3{
+
+    margin-bottom:15px;
+}
+
+
+.option{
+
+    display:block;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+
+.option:hover{
+
+    background:#eff6ff;
+}
+
+
+.quiz-button{
+
+    padding:14px 30px;
+
+    border:none;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+
+.quiz-result{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq{
+
+    background:white;
+}
+
+
+.faq-item{
+
+    max-width:900px;
+
+    margin:0 auto 15px;
+
+    background:#f8fafc;
+
+    border:
+    1px solid var(--border);
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+
+.faq-question{
+
+    padding:18px 20px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+
+.faq-answer{
+
+    display:none;
+
+    padding:0 20px 20px;
+
+    color:var(--gray);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#020617;
+
+    color:#cbd5e1;
+
+    padding:60px 20px 20px;
+}
+
+
+.footer-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    2fr 1fr 1fr;
+
+    gap:40px;
+}
+
+
+footer h3{
+
+    color:white;
+
+    margin-bottom:15px;
+}
+
+
+footer ul{
+
+    list-style:none;
+}
+
+
+footer li{
+
+    margin-bottom:8px;
+}
+
+
+.copyright{
+
+    text-align:center;
+
+    border-top:
+    1px solid #1e293b;
+
+    margin-top:40px;
+
+    padding-top:20px;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:4000;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark{
+
+    background:#020617;
+
+    color:#e2e8f0;
+}
+
+
+body.dark .section-title h2{
+
+    color:white;
+}
+
+
+body.dark .about,
+body.dark .video-section,
+body.dark .examples,
+body.dark .calculator,
+body.dark .faq{
+
+    background:#0f172a;
+}
+
+
+body.dark .course,
+body.dark .study-plan,
+body.dark .quiz,
+body.dark .formulas{
+
+    background:#020617;
+}
+
+
+body.dark .info-card,
+body.dark .lesson-card,
+body.dark .video-card,
+body.dark .example,
+body.dark .week,
+body.dark .question-box,
+body.dark .faq-item{
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+    color:#e2e8f0;
+}
+
+
+body.dark .video-info h3{
+
+    color:white;
+}
+
+
+body.dark .video-info p{
+
+    color:#cbd5e1;
+}
+
+
+body.dark .video-number{
+
+    background:#172554;
+
+    color:#93c5fd;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .hero-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .about-grid,
+    .topic-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:800px){
+
+    .video-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .nav-menu{
+
+        display:none;
+
+    }
+
+    .hero-container{
+
+        padding:
+        70px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .stats{
+
+        margin-top:0;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stat{
+
+        border-right:none;
+
+        border-bottom:
+        1px solid var(--border);
+
+    }
+
+    .course-grid,
+    .formula-grid,
+    .about-grid,
+    .topic-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    section{
+
+        padding:
+        65px 15px;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .video-info{
+
+        padding:20px;
+
+    }
+
+    .video-info h3{
+
+        font-size:20px;
+
+    }
+
+    .play-button{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+Calculus<span>1</span>
+
+</div>
+
+
+<ul class="nav-menu">
+
+<li>
+<a href="#home">หน้าแรก</a>
+</li>
+
+<li>
+<a href="#about">เกี่ยวกับ</a>
+</li>
+
+<li>
+<a href="#course">บทเรียน</a>
+</li>
+
+<li>
+<a href="#videos">วิดีโอ</a>
+</li>
+
+<li>
+<a href="#formulas">สูตร</a>
+</li>
+
+<li>
+<a href="#quiz">แบบทดสอบ</a>
+</li>
+
+</ul>
+
+
+<button
+class="theme-btn"
+onclick="toggleDarkMode()">
+
+🌙
+
+</button>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+class="hero"
+id="home">
+
+<div class="hero-container">
+
+
+<div>
+
+<h1>
+
+เรียนรู้
+
+<span>
+Calculus 1
+</span>
+
+อย่างเข้าใจ
+
+</h1>
+
+
+<p>
+
+เว็บไซต์เรียนแคลคูลัส 1
+สำหรับผู้เริ่มต้นและผู้ที่ต้องการทบทวน
+ตั้งแต่ Functions, Limits, Continuity,
+Derivatives ไปจนถึง Integrals
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#course"
+class="btn btn-primary">
+
+📚 เริ่มเรียน
+
+</a>
+
+
+<a
+href="#videos"
+class="btn btn-outline">
+
+🎥 ดูวิดีโอ
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<h3>
+📖 สิ่งที่จะได้เรียน
+</h3>
+
+
+<ul>
+
+<li>✓ Functions</li>
+
+<li>✓ Limits</li>
+
+<li>✓ Continuity</li>
+
+<li>✓ Derivatives</li>
+
+<li>✓ Applications</li>
+
+<li>✓ Integrals</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================= -->
+
+<div class="stats">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<strong>8+</strong>
+
+<span>บทเรียน</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>50+</strong>
+
+<span>สูตรสำคัญ</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>30+</strong>
+
+<span>ตัวอย่างโจทย์</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>10</strong>
+
+<span>ข้อแบบทดสอบ</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+class="about"
+id="about">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+🎓 ทำไมต้องเรียน Calculus 1?
+</h2>
+
+<p>
+แคลคูลัสเป็นพื้นฐานสำคัญของคณิตศาสตร์ระดับสูง
+</p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+📈
+</div>
+
+<h3>
+การเปลี่ยนแปลง
+</h3>
+
+<p>
+
+ใช้ศึกษาอัตราการเปลี่ยนแปลง
+เช่น ความเร็ว ความเร่ง
+การเติบโต และการเปลี่ยนแปลงของข้อมูล
+
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+📐
+</div>
+
+<h3>
+พื้นที่และปริมาตร
+</h3>
+
+<p>
+
+อินทิกรัลสามารถใช้คำนวณพื้นที่ใต้กราฟ
+ปริมาตร และปริมาณสะสมต่าง ๆ
+
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+💻
+</div>
+
+<h3>
+การประยุกต์ใช้
+</h3>
+
+<p>
+
+แคลคูลัสถูกใช้ในวิศวกรรม
+ฟิสิกส์ คอมพิวเตอร์ AI
+เศรษฐศาสตร์ และวิทยาศาสตร์ข้อมูล
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     COURSE
+========================================================= -->
+
+<section
+class="course"
+id="course">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+📚 หลักสูตร Calculus 1
+</h2>
+
+<p>
+เรียนจากพื้นฐานไปจนถึงการประยุกต์
+</p>
+
+</div>
+
+
+<div class="course-grid">
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 01
+</div>
+
+<h3>Functions</h3>
+
+<p>
+เรียนรู้พื้นฐานของฟังก์ชัน
+และความสัมพันธ์ระหว่างตัวแปร
+</p>
+
+<ul>
+
+<li>Domain</li>
+
+<li>Range</li>
+
+<li>กราฟ</li>
+
+<li>Polynomial Functions</li>
+
+<li>Rational Functions</li>
+
+<li>Trigonometric Functions</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 02
+</div>
+
+<h3>Limits</h3>
+
+<p>
+ศึกษาพฤติกรรมของฟังก์ชัน
+เมื่อ x เข้าใกล้ค่าที่กำหนด
+</p>
+
+<ul>
+
+<li>Definition of Limit</li>
+
+<li>Left / Right Limit</li>
+
+<li>Limit Laws</li>
+
+<li>Indeterminate Forms</li>
+
+<li>Limits at Infinity</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 03
+</div>
+
+<h3>Continuity</h3>
+
+<p>
+ตรวจสอบว่าฟังก์ชันมีความต่อเนื่องหรือไม่
+</p>
+
+<ul>
+
+<li>Continuous Function</li>
+
+<li>Discontinuity</li>
+
+<li>Removable Discontinuity</li>
+
+<li>Infinite Discontinuity</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 04
+</div>
+
+<h3>Derivatives</h3>
+
+<p>
+ศึกษาการเปลี่ยนแปลงของฟังก์ชัน
+</p>
+
+<ul>
+
+<li>Derivative Definition</li>
+
+<li>Power Rule</li>
+
+<li>Product Rule</li>
+
+<li>Quotient Rule</li>
+
+<li>Chain Rule</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 05
+</div>
+
+<h3>Applications</h3>
+
+<p>
+นำอนุพันธ์มาใช้แก้ปัญหา
+</p>
+
+<ul>
+
+<li>Critical Points</li>
+
+<li>Maximum</li>
+
+<li>Minimum</li>
+
+<li>Optimization</li>
+
+<li>Related Rates</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 06
+</div>
+
+<h3>Integrals</h3>
+
+<p>
+เรียนรู้แนวคิดของอินทิกรัล
+</p>
+
+<ul>
+
+<li>Antiderivative</li>
+
+<li>Indefinite Integral</li>
+
+<li>Definite Integral</li>
+
+<li>Area Under Curve</li>
+
+<li>Fundamental Theorem</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 07
+</div>
+
+<h3>Techniques</h3>
+
+<p>
+เทคนิคพื้นฐานในการอินทิเกรต
+</p>
+
+<ul>
+
+<li>Substitution</li>
+
+<li>Integration by Parts</li>
+
+<li>Trigonometric Integrals</li>
+
+</ul>
+
+</div>
+
+
+<div class="lesson-card">
+
+<div class="lesson-number">
+Lesson 08
+</div>
+
+<h3>Review</h3>
+
+<p>
+ทบทวนเนื้อหาทั้งหมด
+และฝึกทำโจทย์
+</p>
+
+<ul>
+
+<li>รวมสูตร</li>
+
+<li>แนวข้อสอบ</li>
+
+<li>โจทย์ประยุกต์</li>
+
+<li>แบบทดสอบ</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     VIDEOS
+========================================================= -->
+
+<section
+class="video-section"
+id="videos">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+🎥 วิดีโอการเรียน Calculus 1
+</h2>
+
+<p>
+เลือกวิดีโอที่ต้องการเรียน
+แล้วกด ▶ เพื่อรับชมได้ทันที
+</p>
+
+</div>
+
+
+<div class="video-grid">
+
+
+<!-- VIDEO 1 -->
+
+<div class="video-card">
+
+<div
+class="video-thumbnail"
+onclick="openVideo('1iiqYP_lljM')">
+
+<img
+src="https://img.youtube.com/vi/1iiqYP_lljM/maxresdefault.jpg"
+alt="Calculus 1 Video 1">
+
+<div class="play-button">
+▶
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<span class="video-number">
+VIDEO 01
+</span>
+
+<h3>
+ปูพื้นฐานแคลคูลัส
+</h3>
+
+<p>
+วิดีโอสำหรับเริ่มต้นเรียนรู้
+พื้นฐานของ Calculus
+</p>
+
+<button
+class="watch-button"
+onclick="openVideo('1iiqYP_lljM')">
+
+▶ ดูวิดีโอ
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- VIDEO 2 -->
+
+<div class="video-card">
+
+<div
+class="video-thumbnail"
+onclick="openVideo('GRiolpOKyxk')">
+
+<img
+src="https://img.youtube.com/vi/GRiolpOKyxk/maxresdefault.jpg"
+alt="Calculus 1 Video 2">
+
+<div class="play-button">
+▶
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<span class="video-number">
+VIDEO 02
+</span>
+
+<h3>
+Calculus 1 ตอนที่ 2
+</h3>
+
+<p>
+เรียนรู้เนื้อหาเพิ่มเติม
+และทำความเข้าใจแนวคิดสำคัญ
+</p>
+
+<button
+class="watch-button"
+onclick="openVideo('GRiolpOKyxk')">
+
+▶ ดูวิดีโอ
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- VIDEO 3 -->
+
+<div class="video-card">
+
+<div
+class="video-thumbnail"
+onclick="openVideo('9-U1DxHryb0')">
+
+<img
+src="https://img.youtube.com/vi/9-U1DxHryb0/maxresdefault.jpg"
+alt="Calculus 1 Video 3">
+
+<div class="play-button">
+▶
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<span class="video-number">
+VIDEO 03
+</span>
+
+<h3>
+Calculus 1 ตอนที่ 3
+</h3>
+
+<p>
+ฝึกทำความเข้าใจแนวคิด
+และเนื้อหาทางคณิตศาสตร์
+</p>
+
+<button
+class="watch-button"
+onclick="openVideo('9-U1DxHryb0')">
+
+▶ ดูวิดีโอ
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- VIDEO 4 -->
+
+<div class="video-card">
+
+<div
+class="video-thumbnail"
+onclick="openVideo('U3PUHZl66PM')">
+
+<img
+src="https://img.youtube.com/vi/U3PUHZl66PM/maxresdefault.jpg"
+alt="Calculus 1 Video 4">
+
+<div class="play-button">
+▶
+</div>
+
+</div>
+
+
+<div class="video-info">
+
+<span class="video-number">
+VIDEO 04
+</span>
+
+<h3>
+Calculus 1 ตอนที่ 4
+</h3>
+
+<p>
+เรียนรู้เนื้อหาเพิ่มเติม
+พร้อมฝึกทักษะการแก้โจทย์
+</p>
+
+<button
+class="watch-button"
+onclick="openVideo('U3PUHZl66PM')">
+
+▶ ดูวิดีโอ
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     VIDEO MODAL
+========================================================= -->
+
+<div
+class="video-modal"
+id="videoModal">
+
+<div class="video-box">
+
+
+<button
+class="close-video"
+onclick="closeVideo()">
+
+×
+
+</button>
+
+
+<div class="video-player">
+
+<iframe
+id="youtubeVideo"
+src=""
+title="Calculus 1 Video"
+allow="autoplay; encrypted-media; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================================================
+     TOPICS
+========================================================= -->
+
+<section
+class="topics">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+🧠 หัวข้อสำคัญ
+</h2>
+
+<p>
+สิ่งที่ควรเข้าใจก่อนสอบ
+</p>
+
+</div>
+
+
+<div class="topic-grid">
+
+
+<div class="topic">
+
+<h3>Functions</h3>
+
+<p>
+เข้าใจ Domain, Range
+และกราฟของฟังก์ชัน
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Limits</h3>
+
+<p>
+เข้าใจแนวคิดของการเข้าใกล้
+และการคำนวณลิมิต
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Derivatives</h3>
+
+<p>
+เข้าใจอัตราการเปลี่ยนแปลง
+และความชันของเส้นสัมผัส
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Optimization</h3>
+
+<p>
+ใช้อนุพันธ์หาค่าสูงสุดและต่ำสุด
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Integrals</h3>
+
+<p>
+เข้าใจพื้นที่ใต้กราฟ
+และปริมาณสะสม
+</p>
+
+</div>
+
+
+<div class="topic">
+
+<h3>Fundamental Theorem</h3>
+
+<p>
+เชื่อมโยงแนวคิดระหว่าง
+Derivative และ Integral
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FORMULAS
+========================================================= -->
+
+<section
+class="formulas"
+id="formulas">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+📐 รวมสูตร Calculus 1
+</h2>
+
+<p>
+สูตรพื้นฐานที่ควรจำ
+</p>
+
+</div>
+
+
+<div class="formula-grid">
+
+
+<div class="formula-card">
+
+<h3>
+Derivative
+</h3>
+
+<div class="formula">
+d/dx(c) = 0
+</div>
+
+<div class="formula">
+d/dx(xⁿ) = nxⁿ⁻¹
+</div>
+
+<div class="formula">
+d/dx(sin x) = cos x
+</div>
+
+<div class="formula">
+d/dx(cos x) = -sin x
+</div>
+
+<div class="formula">
+d/dx(eˣ) = eˣ
+</div>
+
+<div class="formula">
+d/dx(ln x) = 1/x
+</div>
+
+</div>
+
+
+<div class="formula-card">
+
+<h3>
+Derivative Rules
+</h3>
+
+<div class="formula">
+(fg)' = f'g + fg'
+</div>
+
+<div class="formula">
+(f/g)' = (gf' - fg')/g²
+</div>
+
+<div class="formula">
+Chain Rule
+</div>
+
+<div class="formula">
+f(g(x))' = f'(g(x))g'(x)
+</div>
+
+</div>
+
+
+<div class="formula-card">
+
+<h3>
+Integral
+</h3>
+
+<div class="formula">
+∫xⁿdx = xⁿ⁺¹/(n+1)+C
+</div>
+
+<div class="formula">
+∫1/x dx = ln|x|+C
+</div>
+
+<div class="formula">
+∫eˣdx = eˣ+C
+</div>
+
+<div class="formula">
+∫cos x dx = sin x+C
+</div>
+
+<div class="formula">
+∫sin x dx = -cos x+C
+</div>
+
+</div>
+
+
+<div class="formula-card">
+
+<h3>
+Trigonometry
+</h3>
+
+<div class="formula">
+sin²x + cos²x = 1
+</div>
+
+<div class="formula">
+1 + tan²x = sec²x
+</div>
+
+<div class="formula">
+1 + cot²x = csc²x
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     EXAMPLES
+========================================================= -->
+
+<section
+class="examples">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+📝 ตัวอย่างโจทย์
+</h2>
+
+<p>
+ตัวอย่างพร้อมวิธีทำ
+</p>
+
+</div>
+
+
+<div class="example">
+
+<div class="question">
+
+ข้อ 1:
+จงหาอนุพันธ์ของ
+f(x) = x³ + 2x²
+
+</div>
+
+
+<div class="answer">
+
+<p>
+ใช้ Power Rule
+</p>
+
+<p>
+d/dx(x³) = 3x²
+</p>
+
+<p>
+d/dx(2x²) = 4x
+</p>
+
+<p>
+
+<strong>
+ดังนั้น f'(x) = 3x² + 4x
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="question">
+
+ข้อ 2:
+จงหา ∫4x³dx
+
+</div>
+
+
+<div class="answer">
+
+<p>
+ใช้สูตร Power Rule สำหรับ Integral
+</p>
+
+<p>
+
+∫4x³dx = x⁴ + C
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="example">
+
+<div class="question">
+
+ข้อ 3:
+จงหา lim(x→2)(x²+3)
+
+</div>
+
+
+<div class="answer">
+
+<p>
+แทนค่า x = 2
+</p>
+
+<p>
+
+2² + 3 = 7
+
+</p>
+
+<p>
+
+<strong>
+คำตอบ = 7
+</strong>
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     STUDY PLAN
+========================================================= -->
+
+<section
+class="study-plan">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+📅 แผนการเรียน 8 สัปดาห์
+</h2>
+
+<p>
+ตัวอย่างตารางสำหรับผู้เริ่มต้น
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 1 — Functions
+</strong>
+
+<p>
+ทบทวนฟังก์ชัน Domain, Range
+และกราฟ
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 2 — Limits
+</strong>
+
+<p>
+เรียน Limit และฝึกคำนวณ
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 3 — Continuity
+</strong>
+
+<p>
+ศึกษา Continuous Function
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 4 — Derivatives
+</strong>
+
+<p>
+เรียน Power Rule และกฎอนุพันธ์
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 5 — Chain Rule
+</strong>
+
+<p>
+ฝึก Product, Quotient และ Chain Rule
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 6 — Applications
+</strong>
+
+<p>
+Maximum, Minimum และ Optimization
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 7 — Integrals
+</strong>
+
+<p>
+เรียน Indefinite และ Definite Integral
+</p>
+
+</div>
+
+
+<div class="week">
+
+<strong>
+สัปดาห์ที่ 8 — Review
+</strong>
+
+<p>
+ทบทวนทั้งหมดและทำแบบทดสอบ
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CALCULATOR
+========================================================= -->
+
+<section
+class="calculator">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+🧮 เครื่องมือช่วยคำนวณ
+</h2>
+
+<p>
+เครื่องมือพื้นฐานสำหรับฝึกแนวคิด
+</p>
+
+</div>
+
+
+<div class="calculator-box">
+
+
+<div class="input-group">
+
+<label>
+ใส่เลขชี้กำลัง n
+</label>
+
+<input
+type="number"
+id="powerInput"
+placeholder="เช่น 3">
+
+</div>
+
+
+<button
+class="calc-button"
+onclick="calculateDerivative()">
+
+หาอนุพันธ์ของ xⁿ
+
+</button>
+
+
+<div
+class="calc-result"
+id="calcResult">
+
+ผลลัพธ์จะแสดงที่นี่
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     QUIZ
+========================================================= -->
+
+<section
+class="quiz"
+id="quiz">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+📝 แบบทดสอบ Calculus 1
+</h2>
+
+<p>
+ทั้งหมด 10 ข้อ
+</p>
+
+</div>
+
+
+<div class="quiz-container">
+
+
+<div class="question-box">
+
+<h3>
+1. อนุพันธ์ของ x² คืออะไร?
+</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+2x
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+x
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+x²
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+2. ∫x dx เท่ากับอะไร?
+</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+x²/2 + C
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+x + C
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+2x + C
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+3. Limit ของ x+2 เมื่อ x→3 คือ?
+</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+3
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+5
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+6
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+4. อนุพันธ์ของ sin x คือ?
+</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+sin x
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+-cos x
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+cos x
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+5. Power Rule คือข้อใด?
+</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+nxⁿ⁻¹
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+xⁿ
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+n+x
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+6. อนุพันธ์ของ eˣ คือ?
+</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="a">
+xeˣ
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="b">
+eˣ
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="c">
+ln x
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+7. อินทิกรัลของ cos x คือ?
+</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="a">
+sin x + C
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="b">
+-cos x + C
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="c">
+tan x + C
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+8. Derivative ใช้บอกอะไร?
+</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="a">
+อัตราการเปลี่ยนแปลง
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="b">
+พื้นที่เท่านั้น
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="c">
+จำนวนเต็ม
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+9. Integral สามารถใช้หาสิ่งใด?
+</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="a">
+พื้นที่ใต้กราฟ
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="b">
+จำนวนเฉพาะ
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="c">
+มุมเท่านั้น
+</label>
+
+</div>
+
+
+<div class="question-box">
+
+<h3>
+10. Chain Rule ใช้กับอะไร?
+</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="a">
+ฟังก์ชันประกอบ
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="b">
+จำนวนเต็ม
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="c">
+ค่าคงที่
+</label>
+
+</div>
+
+
+<button
+class="quiz-button"
+onclick="checkQuiz()">
+
+ตรวจคำตอบ
+
+</button>
+
+
+<div
+class="quiz-result"
+id="quizResult">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section
+class="faq">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<h2>
+❓ คำถามที่พบบ่อย
+</h2>
+
+<p>
+คำถามสำหรับผู้เริ่มต้นเรียน Calculus
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<div
+class="faq-question"
+onclick="toggleFAQ(this)">
+
+Calculus 1 ยากไหม?
+
+<span>+</span>
+
+</div>
+
+
+<div class="faq-answer">
+
+Calculus 1 อาจดูยากในช่วงแรก
+แต่ถ้าเข้าใจพื้นฐาน Functions และ Algebra
+จะช่วยให้เรียน Limits, Derivatives
+และ Integrals ได้ง่ายขึ้น
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div
+class="faq-question"
+onclick="toggleFAQ(this)">
+
+ควรเริ่มเรียนจากบทไหน?
+
+<span>+</span>
+
+</div>
+
+
+<div class="faq-answer">
+
+แนะนำให้เริ่มจาก Functions
+จากนั้นจึงเรียน Limits,
+Continuity, Derivatives
+และ Integrals ตามลำดับ
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div
+class="faq-question"
+onclick="toggleFAQ(this)">
+
+ต้องเก่งคณิตศาสตร์ก่อนหรือไม่?
+
+<span>+</span>
+
+</div>
+
+
+<div class="faq-answer">
+
+ไม่จำเป็นต้องเก่งมาก
+แต่ควรมีพื้นฐานพีชคณิต
+เลขยกกำลัง สมการ
+และฟังก์ชัน
+
+</div>
+
+</div>
+
+
+<div class="faq-item">
+
+<div
+class="faq-question"
+onclick="toggleFAQ(this)">
+
+Calculus ใช้กับงานอะไร?
+
+<span>+</span>
+
+</div>
+
+
+<div class="faq-answer">
+
+สามารถนำไปใช้ในวิศวกรรม
+วิทยาศาสตร์ คอมพิวเตอร์
+AI เศรษฐศาสตร์
+และการวิเคราะห์ข้อมูล
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+Calculus 1 Academy
+</h3>
+
+<p>
+
+เว็บไซต์เพื่อการศึกษา
+สำหรับผู้ที่ต้องการเรียนรู้
+Calculus 1 ตั้งแต่พื้นฐาน
+
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+เมนู
+</h3>
+
+<ul>
+
+<li>หน้าแรก</li>
+
+<li>บทเรียน</li>
+
+<li>วิดีโอ</li>
+
+<li>สูตร</li>
+
+<li>แบบทดสอบ</li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>
+เนื้อหา
+</h3>
+
+<ul>
+
+<li>Functions</li>
+
+<li>Limits</li>
+
+<li>Derivatives</li>
+
+<li>Integrals</li>
+
+<li>Applications</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Calculus 1 Academy
+| เว็บไซต์เพื่อการศึกษา
+
+</div>
+
+</footer>
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+class="back-top"
+id="backTop"
+onclick="window.scrollTo(0,0)">
+
+↑
+
+</button>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   VIDEO PLAYER
+========================================================= */
+
+function openVideo(videoID){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const video =
+        document.getElementById("youtubeVideo");
+
+
+    video.src =
+        "https://www.youtube.com/embed/"
+        + videoID
+        + "?autoplay=1";
+
+
+    modal.style.display = "flex";
+
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeVideo(){
+
+    const modal =
+        document.getElementById("videoModal");
+
+    const video =
+        document.getElementById("youtubeVideo");
+
+
+    /* หยุดวิดีโอ */
+
+    video.src = "";
+
+
+    modal.style.display = "none";
+
+
+    document.body.style.overflow =
+        "auto";
+
+}
+
+
+/* =========================================================
+   ESC ปิด VIDEO
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeVideo();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   คลิกพื้นหลังปิด VIDEO
+========================================================= */
+
+document.getElementById(
+    "videoModal"
+).addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === this){
+
+            closeVideo();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleDarkMode(){
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+}
+
+
+/* =========================================================
+   DERIVATIVE CALCULATOR
+========================================================= */
+
+function calculateDerivative(){
+
+    const n =
+        document.getElementById(
+            "powerInput"
+        ).value;
+
+
+    const result =
+        document.getElementById(
+            "calcResult"
+        );
+
+
+    if(n === ""){
+
+        result.innerHTML =
+            "กรุณาใส่ค่า n ก่อน";
+
+        return;
+
+    }
+
+
+    const number =
+        Number(n);
+
+
+    if(number === 0){
+
+        result.innerHTML =
+            "d/dx(x⁰) = 0";
+
+        return;
+
+    }
+
+
+    const newPower =
+        number - 1;
+
+
+    if(newPower === 0){
+
+        result.innerHTML =
+            `d/dx(x^${number}) = ${number}`;
+
+    }
+
+    else{
+
+        result.innerHTML =
+            `d/dx(x^${number}) = ${number}x^${newPower}`;
+
+    }
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function checkQuiz(){
+
+    const answers = {
+
+        q1:"a",
+
+        q2:"a",
+
+        q3:"b",
+
+        q4:"c",
+
+        q5:"a",
+
+        q6:"b",
+
+        q7:"a",
+
+        q8:"a",
+
+        q9:"a",
+
+        q10:"a"
+
+    };
+
+
+    let score = 0;
+
+
+    for(
+        let question in answers
+    ){
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+
+        if(
+            selected &&
+            selected.value ===
+            answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+
+    let message;
+
+
+    if(score >= 9){
+
+        message =
+            "🎉 ยอดเยี่ยมมาก!";
+
+    }
+
+    else if(score >= 7){
+
+        message =
+            "👍 ทำได้ดีมาก!";
+
+    }
+
+    else if(score >= 5){
+
+        message =
+            "📚 ควรทบทวนอีกเล็กน้อย";
+
+    }
+
+    else{
+
+        message =
+            "💪 ลองกลับไปทบทวนบทเรียนแล้วทำใหม่";
+
+    }
+
+
+    result.innerHTML =
+        `${message}<br>คุณได้ ${score} / 10 คะแนน`;
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+function toggleFAQ(element){
+
+    const answer =
+        element.nextElementSibling;
+
+
+    if(
+        answer.style.display ===
+        "block"
+    ){
+
+        answer.style.display =
+            "none";
+
+        element.querySelector(
+            "span"
+        ).textContent = "+";
+
+    }
+
+    else{
+
+        answer.style.display =
+            "block";
+
+        element.querySelector(
+            "span"
+        ).textContent = "−";
+
+    }
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const button =
+            document.getElementById(
+                "backTop"
+            );
+
+
+        if(
+            window.scrollY > 500
+        ){
+
+            button.style.display =
+                "block";
+
+        }
+
+        else{
+
+            button.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
